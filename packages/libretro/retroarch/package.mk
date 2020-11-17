@@ -75,7 +75,7 @@ RETROARCH_GL=""
 
 if [ "$DEVICE" == "OdroidGoAdvance" ]; then
   PKG_DEPENDS_TARGET+=" librga libpng"
-  RETROARCH_GL="--enable-kms --enable-odroidgo2 --disable-x11 --disable-wayland --enable-opengles --enable-opengles3 --disable-mali_fbdev"
+  RETROARCH_GL="--enable-kms --enable-odroidgo2 --disable-x11 --disable-wayland --enable-opengles --enable-opengles3 --enable-opengles3_2 --disable-mali_fbdev"
 elif [ "$VULKAN" == "nvidia-driver" ]; then
   RETROARCH_GL="--enable-vulkan --disable-x11 --disable-kms --disable-egl"
 elif [ "$OPENGL_SUPPORT" == "yes" ]; then
@@ -94,7 +94,7 @@ elif [ "$OPENGLES" == "allwinner-mali" ] || [ "$OPENGLES" == "odroidxu3-mali" ];
   RETROARCH_GL="--enable-opengles --enable-kms --disable-x11"
 elif [ "$OPENGLES" == "mesa" ]; then
   if [ "$DEVICE" == "RPi4" ]; then
-    RETROARCH_GL="--enable-opengles --enable-opengles3 --enable-opengl_core --enable-kms --disable-x11 --disable-videocore --enable-plain_drm"
+    RETROARCH_GL="--enable-opengles --enable-opengles3 --enable-opengles3_1 --enable-opengl_core --enable-kms --disable-x11 --disable-videocore --enable-plain_drm"
   else
     RETROARCH_GL="--enable-opengles --enable-kms --disable-x11"
   fi
